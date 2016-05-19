@@ -2,13 +2,11 @@ class User < ActiveRecord::Base
 
   def self.import!
     users_data ||= File.open('public/user_list').readlines
-    unless User.first
       users_data.each do |data|
         data = JSON.parse(data)
         User.create(name: data['name'],
                     user_id: data['user_id'],
                     distance: User.distance(data['latitude'].to_f, data['longitude'].to_f))
-      end
     end
   end
 

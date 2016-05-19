@@ -5,9 +5,8 @@ class UsersController < ApplicationController
     @users = User.where('distance < ?', (params[:distance].to_i * 1000))
   end
 
-
   private
   def import_users
-    User.import!
+    User.import! unless User.first
   end
 end
