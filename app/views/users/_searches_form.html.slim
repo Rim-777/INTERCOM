@@ -1,0 +1,6 @@
+= form_tag users_path, method: :get
+  .row.search_form
+    .col-lg-7.col-md-8.col-sm-8.col-xs-8
+      = select_tag :distance, options_for_select(%w(Please\ Select\ Distance: 25 50 100 150 200 250 300 500 1000)), class: 'form-control '
+    .col-lg-1.col-md-1.col-sm-1.col-xs-1
+      = submit_tag 'Import', class: 'btn btn-warning '

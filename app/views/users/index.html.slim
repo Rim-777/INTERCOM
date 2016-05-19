@@ -1,0 +1,24 @@
+.row
+  .col-lg-12
+
+    table.table.table-hover.table-bordered
+      thead
+        tr
+          td.col-lg-1.col-md-1.col-sm-1.col-xs-1
+            h4
+              |Name:
+          td.col-lg-2.col-md-3.col-sm-3.col-xs-3
+            h4
+              |User_id:
+          td.col-lg-1.col-md-1.col-sm-1.col-xs-1
+            h4
+              |Distance:
+      tbody
+        - @users.each do |user|
+          tr
+            td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+              = user.name
+            td.col-lg-2.col-md-3.col-sm-3.col-xs-3.bord
+              = user.user_id
+            td.col-lg-1.col-md-1.col-sm-1.col-xs-1.bord
+              =  "#{user.distance} km."
