@@ -1,20 +1,17 @@
 class Array
 
-  def result
-    @@result
-  end
-
-  def flatten_out!(clear: false)
-    @@result =[] unless clear
+  def flatten_out!
+    result =[]
     self.each do |i|
       if i.class == self.class
-        i.flatten_out!(clear:true)
+        result += i.flatten_out!
       else
         result << i
       end
     end
     result
   end
+
 end
 
 
